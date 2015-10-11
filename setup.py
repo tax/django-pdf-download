@@ -14,15 +14,15 @@ if sys.argv[-1] == 'publish':
     sys.exit()
 
 setup(
-    name='django-pdfdownloadmixin',
+    name='django-pdf-download',
     version='0.0.1',
     author='Paul Tax',
     author_email='paultax@gmail.com',
     include_package_data=True,
     install_requires=['PyVirtualDisplay==0.1.5', 'selenium==2.47.3', 'Django>=1.8.0'],
-    py_modules=['whatsapp'],
-    url='https://github.com/tax/pywhatsapp',
+    py_modules=['django-pdf-download'],
+    url='https://github.com/tax/django-pdf-download',
     license='BSD licence, see LICENCE.txt',
-    description='Simple wrapper around yowsup to send a message or mediafile with whatsapp',
+    description='',
     long_description=open('README.md').read(),
 )
