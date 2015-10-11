@@ -1,0 +1,9 @@
+before_install:
+  - sudo apt-get install -y firefox xvfb cups-pdf
+language: python
+python:
+  - "2.7"
+install:
+  - pip install -r requirements.txt
+# command to run tests, e.g. python setup.py test
+script:  python test.py
