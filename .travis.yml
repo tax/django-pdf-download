@@ -1,4 +1,5 @@
 before_install:
+  - sudo apt-get update -qq
   - sudo apt-get install -y firefox xvfb cups-pdf
 language: python
 python:
