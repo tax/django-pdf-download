@@ -24,7 +24,7 @@ class InvoiceDetail(PdfDownloadMixin, DetailView):
 The filename of the PDF file download.
 Default: download.pdf
 
-```pdf_folder = '/tmp/'
+```pdf_folder = '/tmp/'```
 ```pdf_remove_file```
 Default: ```python True```
 ```pdf_authenticate```
