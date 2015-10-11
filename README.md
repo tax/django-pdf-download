@@ -20,23 +20,24 @@ class InvoiceDetail(PdfDownloadMixin, DetailView):
 
 ## Options:
 
-```pdf_filename```
+**pdf_filename**
 The filename of the PDF file download.
 Default: download.pdf
 
-```pdf_folder = '/tmp/'```
-```pdf_remove_file```
-Default: ```python True```
-```pdf_authenticate```
+**pdf_folder = '/tmp/'**
+**pdf_remove_file**
+Default: **python True**
+**pdf_authenticate**
 Default: True
-```pdf_load_time```
+**pdf_load_time**
 Default: True
-```pdf_get_param```
+**pdf_get_param**
 Default: 'pdf'
 
 
 
 ## Installation
+
 ```
 $ pip install django-pdf-download
 ```
