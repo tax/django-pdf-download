@@ -3,7 +3,6 @@ import os
 import sys
 from setuptools.command.install import install
 from setuptools import setup
-from pdfdownload import activate_headless_print
 
 
 class CustomInstallCommand(install):
@@ -11,6 +10,7 @@ class CustomInstallCommand(install):
     def run(self):
         install.run(self)
         print "Print activating headless printing"
+        from pdfdownload import activate_headless_print
         activate_headless_print()
 
 
@@ -20,7 +20,7 @@ if sys.argv[-1] == 'publish':
 
 setup(
     name='django-pdf-download',
-    version='0.0.1',
+    version='0.0.3',
     author='Paul Tax',
     author_email='paultax@gmail.com',
     include_package_data=True,
