@@ -24,21 +24,30 @@ class InvoiceDetail(PdfDownloadMixin, TemplateView):
 **pdf_filename**
 
 The filename of the PDF file download.
-Default: download.pdf
 
-**pdf_folder = '/tmp/'**
+Default: *download.pdf*
+
+**pdf_folder**
+
+The folder where the pdf files are saved.
+
+Default: ```python '/tmp/'```
 
 **pdf_remove_file**
-Default: **python True**
+If true then created files are removed after creation.
+
+Default: ```python True```
 
 **pdf_authenticate**
-Default: True
+Authenticate the request to fetch the webpage for print *(current user of PDF download request is used)*
+Default: ```python True```
 
 **pdf_load_time**
 Default: True
 
 **pdf_get_param**
-Default: 'pdf'
+GET parameter to indicate file should be downloaded as pdf: *(Example: http://mysite.com/mypage/?**pdf** willl download page as PDF)*
+Default: ```python 'pdf'```
 
 
 
@@ -52,5 +61,13 @@ System requirements tested on (ubuntu 14.04):
 sudo apt-get install firefox xvfb cups-pdf
 ```
 
-*cups-pdf* is only used once to setup headless printing (quirk in firefox you can not save as PDF unless you printed via another printer at least once).
+*cups-pdf* is only used once to setup headless printing (quirk in firefox you can not save as PDF unless you printed via another printer at least once). 
+
+You can do this by running the following command (available after installation of the package):
+
+```
+$ activate_headless_print 
+```
+
+
 

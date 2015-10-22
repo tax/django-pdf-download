@@ -15,6 +15,8 @@ CUPS_PDF_PRINTER = 'PDF'
 
 def activate_headless_print():
     save_pdf('http://www.google.com', '/tmp/p.pdf', printer=CUPS_PDF_PRINTER)
+    print 'Activated headless print succesfully'
+    print ' cups-pdf package is no longer needed for this package (django-pdf-download)'
 
 
 def save_pdf(url, filename, cookie=None, wait_time=5, printer='Print to file'):
