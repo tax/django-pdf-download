@@ -25,48 +25,30 @@ class InvoiceDetail(PdfDownloadMixin, TemplateView):
 
 The filename of the PDF file download.
 
-Default: 
-```python 
-'download.pdf'
-```
+Default: *download.pdf*
 
 **pdf_folder**
 
 The folder where the pdf files are saved.
 
-Default: 
-```python 
-'/tmp/'
-```
+Default: *'/tmp/'*
 
 **pdf_remove_file**
 If true then created files are removed after creation.
 
-Default:
-```python 
-True
-```
+Default: *True*
 
 
 **pdf_authenticate**
 Authenticate the request to fetch the webpage for print *(current user of PDF download request is used)*
-Default: ```python True```
+Default: *True*
 
 **pdf_load_time**
-Default:
-```python 
-True
-```
+Default: *2* seconds
 
 **pdf_get_param**
 GET parameter to indicate file should be downloaded as pdf: *(Example: http://mysite.com/mypage/?pdf willl download page as PDF)*
-Default: 
-```python 
-'pdf'
-```
-
-
-
+Default: *'pdf'*
 
 
 
