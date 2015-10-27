@@ -9,7 +9,7 @@ if sys.argv[-1] == 'publish':
 
 setup(
     name='django-pdf-download',
-    version='0.2.0',
+    version='0.3.0',
     author='Paul Tax',
     author_email='paultax@gmail.com',
     include_package_data=True,

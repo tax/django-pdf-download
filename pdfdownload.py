@@ -49,6 +49,19 @@ def save_pdf(url, filename, cookie=None, wait_time=5, printer='Print to file'):
     display.stop()
 
 
+def get_pdf_buffer(url, filename=None, cookie=None, remove_file=True, wait_time=2):
+    if not filename:
+        filename = '/tmp/' + str(uuid.uuid1()) + '.pdf'
+    save_pdf(url, filename, cookie, wait_time=wait_time)
+    output = StringIO.StringIO()
+    with open(filename, 'r') as fd:
+        output.write(fd.read())
+    if remove_file:
+        os.remove(filename)
+    output.seek(0)
+    return output
+
+
 class PdfDownloadMixin(object):
     pdf_filename = 'download.pdf'
     pdf_folder = '/tmp/'
@@ -81,15 +94,12 @@ class PdfDownloadMixin(object):
         return cookie
 
     def _return_pdf(self, url, cookie=None):
-        filename = self.get_pdf_location()
-        save_pdf(url, filename, cookie, wait_time=self.pdf_load_time)
-        output = StringIO.StringIO()
-        with open(filename, 'r') as fd:
-            output.write(fd.read())
-        if self.pdf_remove_file:
-            os.remove(filename)
-        output.seek(0)
-        return output
+        return get_pdf_buffer(
+            url,
+            cookie=cookie,
+            remove_file=self.pdf_remove_file,
+            wait_time=self.pdf_load_time
+        )
 
     def dispatch(self, request, *args, **kwargs):
         if self.pdf_get_param in request.GET.keys():
