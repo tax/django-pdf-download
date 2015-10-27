@@ -1,5 +1,6 @@
 import time
 import os
+import uuid
 import StringIO
 from urllib import urlencode
 from urlparse import urlparse, urlunparse, parse_qs
@@ -22,7 +23,10 @@ def activate_headless_print():
 def save_pdf(url, filename, cookie=None, wait_time=5, printer='Print to file'):
     display = Display(visible=0, size=(800, 600))
     display.start()
-    profile = webdriver.FirefoxProfile()
+    profile_dir = '/tmp/' + str(uuid.uuid1()).replace('-', '')
+    if not os.path.exists(profile_dir):
+        os.makedirs(profile_dir)
+    profile = webdriver.FirefoxProfile(profile_dir)
     profile.set_preference('print_printer', printer)
     profile.set_preference('print.print_to_file', True)
     profile.set_preference('print.print_to_filename', filename)
