@@ -1,4 +1,4 @@
-Django==1.8.5
+Django==1.11.28
 EasyProcess==0.1.9
 PyVirtualDisplay==0.1.5
 selenium==2.47.3
